@@ -15,9 +15,7 @@ class LoginPage extends Page {
     get btnLogin () {
         return $('#login-button');
     }
-    get errorLockedOutUser(){
-        return $('//h3[text()="Epic sadface: Sorry, this user has been locked out."]');
-    }
+    errorLockedOutUser = (dynamicMessage) => $(`//h3[text()="${dynamicMessage}"]`)
 
     async login (username) {
         await this.fieldUsername.waitForDisplayed({ timeout : 2500});

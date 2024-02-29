@@ -14,7 +14,7 @@ When(/^I login with "(.*)"$/, async (username) => {
 Then(/^I should see home page$/, async () => {
     await HomePage.validateHomePage()
 })
-Then(/^I should see alert "(.*)"$/, async (dynamicMessage) => {
+Then(/^I should see error "(.*)"$/, async (dynamicMessage) => {
     await LoginPage.validateLockedOutUserError(dynamicMessage)
 })
 

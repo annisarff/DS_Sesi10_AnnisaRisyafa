@@ -8,5 +8,10 @@ Feature: Swag Labs - Login
    Scenario: As a locked_out_user, I should get alert
     Given I am on the login page
     When I login with "locked_out_user"
-    Then I should see alert "Epic sadface: Sorry, this user has been locked out"
+    Then I should see error "Epic sadface: Sorry, this user has been locked out."
+
+  Scenario: As a problem_user, I should get alert
+    Given I am on the login page
+    When I login with "problem_user"
+    Then I should see home page
  
